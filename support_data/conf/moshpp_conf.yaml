@@ -4,7 +4,7 @@ mocap:
   # we use id instead of direct names to avoid knowing the subject name beforehand
   # by default -1 to ignore th subject label
   subject_id: -1 # ignore subject id when -1
-  subject_names: ${resolve_mocap_subjects:${mocap.fname}}
+  subject_names: ${resolve_mocap_session:${mocap.fname}}
   # only one subject can be processed at a time
   subject_name: ${resolve_subject_name:${mocap.subject_names},${mocap.subject_id}}
   multi_subject: ${resolve_multi_subject:${mocap.subject_names},${mocap.subject_id}} # ignore evaluation if subject id is -1
