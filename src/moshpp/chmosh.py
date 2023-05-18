@@ -277,7 +277,7 @@ def mosh_stagei(stagei_frames: List[Dict[str, np.ndarray]], cfg: DictConfig,
     pose_face_ids = []
     pose_root_ids = all_pose_ids[:3]
     if cfg.surface_model.type == 'smpl':
-        pose_body_ids = all_pose_ids[3:]
+        pose_body_ids = all_pose_ids[3:66]
     elif cfg.surface_model.type == 'smplh':
         pose_body_ids = all_pose_ids[3:66]
         if cfg.moshpp.optimize_fingers:  # dont chop chumpy variables two times
@@ -552,7 +552,7 @@ def mosh_stageii(mocap_fname: str, cfg: DictConfig, markers_latent: np.array,
     pose_root_ids = all_pose_ids[:3]
     # v_pose_body = [model.pose[3:] for model in opt_models]
     if cfg.surface_model.type == 'smpl':
-        pose_body_ids = all_pose_ids[3:]
+        pose_body_ids = all_pose_ids[3:66]
     elif cfg.surface_model.type == 'smplh':
         pose_body_ids = all_pose_ids[3:66]
         if cfg.moshpp.optimize_fingers:  # dont chop chumpy variables two times

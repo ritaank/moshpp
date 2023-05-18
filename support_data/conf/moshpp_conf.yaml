@@ -20,7 +20,7 @@ mocap:
   ds_rate: 1 #down-sampling rate
 
 surface_model:
-  type: smplx
+  type: smpl
   fname: ${dirs.support_base_dir}/${surface_model.type}/${surface_model.gender}/model.pkl
   dmpl_fname: ${dirs.support_base_dir}/${surface_model.type}/${surface_model.gender}/dmpl.pkl
   num_betas: 16
@@ -101,6 +101,28 @@ opt_settings:
   extra_initial_rigid_adjustment: false
 
 opt_weights:
+  smpl:
+    stagei_wt_poseH: 3.0
+    stagei_wt_poseF: 3.
+    stagei_wt_expr: 34.
+    stagei_wt_pose: 3.
+    stagei_wt_poseB: 3.
+    stagei_wt_init_finger_left: 400.0
+    stagei_wt_init_finger_right: 400.0
+    stagei_wt_init_finger: 400.0
+    stagei_wt_betas: 10.
+    stagei_wt_init: 300
+    stagei_wt_data: 75.
+    stagei_wt_surf: 10000.
+    stagei_wt_annealing: [ 1., .5, .25, .125 ]
+    stageii_wt_data: 400
+    stageii_wt_velo: 2.5
+    stageii_wt_dmpl: 1.0
+    stageii_wt_expr: 1.0
+    stageii_wt_poseB: 1.6
+    stageii_wt_poseH: 1.0
+    stageii_wt_poseF: 1.0
+    stageii_wt_annealing: 2.5
   smplh:
     stagei_wt_poseH: 3.0
     stagei_wt_poseF: 3.
